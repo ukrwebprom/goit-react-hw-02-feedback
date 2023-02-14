@@ -12,8 +12,14 @@ export const Button = styled.button`
     border: 0;
     color: #666;
     cursor: pointer;
+    display:flex;
+    align-items:center;
+    gap:5px;
     :hover {
         background-color: #00f;
         color: #fff;
+    }
+    svg {
+        zoom:1.5;
     }
 `

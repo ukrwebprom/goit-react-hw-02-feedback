@@ -1,11 +1,19 @@
 import PropTypes from "prop-types";
 import {ButtonsList, Button} from './FeedbackOptions.styled';
+import { BiLike, BiDislike } from 'react-icons/bi';
+import { RiEmotionNormalLine } from 'react-icons/ri';
+
 
 const FeedbackOptions = ({options, onLeaveFeedback}) => {
+    const icons = {
+        good: <BiLike />,
+        neutral: <RiEmotionNormalLine />,
+        bad: <BiDislike />,
+    }
     return (
         <ButtonsList>
         {options.map(item => 
-            <Button key={item} onClick={() => onLeaveFeedback(item)}>{item}</Button>)
+            <Button key={item} onClick={() => onLeaveFeedback(item)}>{icons[item]}{item}</Button>)
         
         }
         </ButtonsList>
